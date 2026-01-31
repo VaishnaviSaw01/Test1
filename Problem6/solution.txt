@@ -1,0 +1,40 @@
+Problem Statement 6
+
+Consider the following code:
+console.log(a);   //undefined (hoisting)
+console.log(b);   //ReferenceError: Cannot access 'b' before initialization
+var a = 10;       //Not executed due to error
+let b = 20;
+function test() {
+  console.log(c);  //undefined (hoisting inside function)
+  var c = 30;
+}
+test(); //Not reached
+
+EXPLANATION:
+*Why 'a' prints undefined:
+  var declarations are hoisted to top with undefined value
+  a is declared but not yet assigned when console.log(a) runs
+
+*Why 'b' throws an error:
+  let/const are hoisted but not initialized (Temporal Dead Zone)
+  Accessing b before initialization throws ReferenceError
+
+*Why 'c' is undefined inside function:
+  var c is hoisted to top of function scope with undefined
+  console.log(c) runs before c = 30 assignment
+
+CORRECTED CODE:
+
+var a = 10;
+let b = 20;
+
+console.log(a);    // 10
+console.log(b);    // 20
+
+function test() {
+    var c = 30;
+    console.log(c);  // 30
+}
+
+test();

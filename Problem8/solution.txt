@@ -1,0 +1,34 @@
+Problem Statement 8:
+
+Actual Output:
+Hello
+ReferenceError: Cannot access 'sayHi' before initialization
+
+Explanation:
+
+1. sayHello() - WORKS (outputs "Hello")
+   Function declarations are hoisted to the top
+   sayHello can be called before it's declared
+
+2. sayHi() - THROWS ERROR
+   sayHi is a function expression assigned to a variable
+   Variables declared with 'var' are hoisted but NOT initialized
+   At the time sayHi() is called, the variable exists but is undefined
+   Calling undefined as a function causes: TypeError (not ReferenceError)
+
+CORRECTED CODE - 
+
+sayHello();
+function sayHello() {
+    console.log("Hello");
+}
+
+var sayHi = function () {
+    console.log("Hi");
+};
+
+sayHi();  
+
+OUTPUT:
+Hello
+Hi

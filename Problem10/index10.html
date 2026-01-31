@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Card</title>
+    <link rel="stylesheet" href="style10.css">
+</head>
+<body>
+    <div class="profile-card">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-image">
+        <h1 class="profile-name">Vaishnavi Saw</h1>
+        <p class="profile-bio">Software Developer. Passionate about creating efficient and scalable applications.</p>
+        
+        <div class="profile-stats">
+            <div class="stat-item">
+                <span class="stat-number">1.2K</span>
+                <div class="stat-label">Posts</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8.5K</span>
+                <div class="stat-label">Followers</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">342</span>
+                <div class="stat-label">Following</div>
+            </div>
+        </div>
+
+        <button class="follow-button">Follow</button>
+    </div>
+    <script>
+        followButton = document.querySelector('.follow-button');
+        followButton.addEventListener('click', function() {
+           alert('You are now following Vaishnavi Saw!');
+        });
+    </script>
+</body>
+</html>
